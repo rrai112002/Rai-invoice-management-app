@@ -1,0 +1,148 @@
+/* h1
+{
+    color: brown;
+} */
+
+/* *
+{
+    background-color: black;
+} */
+.login-outbox{
+    background-image: url('/Users/rohitrai/Desktop/Screenshot 2024-10-20 at 6.56.10 PM.png'); /* Replace with the actual path to your image */
+    background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center;  /* Center the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Make sure the background takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes fadeInScale {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+.login-container {
+    /* height: 600px; */
+    /* width: 350px;
+    /* width: 60%; */
+
+    /* margin: 150px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    /* display: flex; */ 
+
+
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    animation: fadeInScale 0.8s ease-in-out; /* Smooth fade-in animation */
+    transition: transform 0.3s ease-in-out; /* Transition for scaling on hover */
+  }
+
+  .login-container:hover {
+    transform: scale(1.05); /* Slightly scale up the box when hovered */
+  }
+/* 
+  .login-boxes{
+    height: 60px;
+    width: 50px;
+    background-color: red;
+
+  } */
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInScale 1s ease-in-out; /* Fade in for heading */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  } */
+
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .form-group input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Green glow on focus */
+  }
+  
+  
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    justify-content: center;
+    background-color: #2ea55a;
+    transform: translateY(-2px); /* Slight upward lift on hover */
+  }
+  
+  .message {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+  }
+
+  .create-account {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .register-link{
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: 5px;
+
+  }
+
+
+
+
+  
