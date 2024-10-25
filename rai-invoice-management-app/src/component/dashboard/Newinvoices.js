@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-// import Invoices from "./Invoices";
+import {db} from '../../firebase'
+import { addDoc, collection, Timestamp } from "firebase/firestore";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Newinvoice = () => {
     const [to, setTo] = useState('')
@@ -11,6 +13,8 @@ const Newinvoice = () => {
     const [product, setProduct] = useState([])
     const [total, setTotal] = useState(0)
 
+    const navigation = useNavigate()
+
     const addProduct = () => {
         setProduct([...product,{'id':product.length, 'name':name, 'price':price, 'quantity':quantity}])
         const t = quantity*price
@@ -21,13 +25,37 @@ const Newinvoice = () => {
         setQuantity('')
 
     }
+    const saveData = async ()=> {
+        console.log(to,phone,address)
+        console.log(product)
+        console.log(total)
+
+        const data = await addDoc(collection(db ,'invoices'),{
+            to:to,
+            phone:phone,
+            address:address,
+            product:product,
+           total:total,
+           uid:localStorage.getItem('uid'),
+           date:Timestamp.fromDate(new Date())
+        
+
+
+
+        })
+        console.log(data)
+        navigation('/dashboard/invoice')
+      
+
+
+    }
 
 
     return (
         <div>
             <div className="header-row">
             <p className="new-invoice-heading">New Invoice</p>
-            <button className='add-btn' type='button'>Save data</button>
+            <button onClick={saveData} className='add-btn' type='button'>Save data</button>
 
             </div>
             <form className="new-invoice-form">

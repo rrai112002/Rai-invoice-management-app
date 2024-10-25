@@ -1,8 +1,21 @@
 import React from 'react';
 import './dashboard.css'
-import { Link, Outlet} from 'react-router-dom';
+import { Link, Outlet, useNavigate} from 'react-router-dom';
+import { auth } from '../../firebase'
+import { signOut } from 'firebase/auth';
 
 const Dashboard = () => {
+    const navigate = useNavigate()
+    const logout = ()=>{
+        signOut(auth).then(() => {
+            localStorage.clear()
+            navigate('/login')
+    // Sign-out successful.
+        }).catch((error) => {
+      // An error happened.
+    });
+    }
+
     return (
         <div className='dashboard-wrapper'>
             <div className='side-nav'>
@@ -10,15 +23,15 @@ const Dashboard = () => {
                     <img src={localStorage.getItem('photoURL')} />
                     <div>
                         <p>{localStorage.getItem('cName')}</p>
-                        <button>Logout</button>
+                        <button onClick={logout}>Logout</button>
                     </div>
                 </div>
                 <hr/>
                 <div className='menu'>
-                <Link to="home" className='menu-link'>Home</Link>
-                <Link to="invoice" className='menu-link'>Invoice</Link> 
-                <Link to="newinvoice" className='menu-link'>New Invoice</Link>
-                <Link to="setting" className='menu-link'>Setting</Link>
+                <Link to="home" className='menu-link'><i className="fa-solid fa-house"></i> Home</Link>
+                <Link to="invoice" className='menu-link'><i className="fa-solid fa-file-invoice"></i> Invoice</Link> 
+                <Link to="newinvoice" className='menu-link'><i className="fa-solid fa-file"></i> New Invoice</Link>
+                <Link to="setting" className='menu-link'><i className="fa-solid fa-gear"></i> Setting</Link>
 
                 </div>
 

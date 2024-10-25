@@ -65,6 +65,7 @@
     text-decoration: none;
     font-size: 18px;
 
+
 }
 
 .menu-link:hover
@@ -161,3 +162,463 @@
     background-color: #fd7e14;
 
 }
+
+/* .box
+{
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    margin-top: 10px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+
+} */
+ /* Container styling (box) */
+/* Container styling (box) */
+/* Container styling (box) */
+/* Container styling (box) */
+/* Container styling (box) */
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Text container inside the box */
+.box .text-content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+/* Individual text item styling */
+.box p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    animation: textIn 0.7s ease forwards; /* Only fade in, no fade out */
+}
+
+/* Button styling (delete) */
+.delete-btn {
+    background: linear-gradient(to bottom, #ff5f6d, #ffc371);
+    width: 120px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: buttonAppear 0.7s ease-out forwards;
+}
+
+/* Button hover effect */
+.delete-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to bottom, #ff4d4d, #ff9966);
+}
+.delete-btn:active {
+    transform: scale(0.95); /* Slight shrink effect on click */
+}
+
+/* Fade-in animation for the box */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for text appearing */
+@keyframes textIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Slide in from above */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+/* Button entry animation */
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Slightly larger */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply pulse animation when button appears */
+.delete-btn {
+    animation: pulse 4s infinite; /* Infinite pulse animation */
+}
+
+
+
+/* Button styling (delete) */
+/* Container styling (box) */
+/* General Styles for the Box */
+/*  */
+
+
+
+/* Slide-In from Left Animation */
+/* .slide-in-text {
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: slideInText 1s ease forwards;
+}
+
+@keyframes slideInText {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+} */
+
+/* Text Scaling Animation */
+/* .scale-in-text {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: scaleInText 1s ease forwards;
+}
+
+@keyframes scaleInText {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+} */
+
+/* Button Animation */
+
+
+
+
+/* .box p
+{
+    width: 20%;
+
+
+} */
+/* .box button
+{
+    background-color:red;
+    width: 10%;
+    padding: 8px;
+    /* justify-content: flex-end; */
+    /* color: white;
+    height: 50%;
+    cursor: pointer;
+   
+   
+
+
+} */ 
+
+/* Styling for the View button */
+.view-btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient from purple to blue */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 11.5%;
+}
+
+/* Hover effect for the view button */
+.view-btn:hover {
+    background: linear-gradient(to right, #5b0eaa, #1e63d0); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Active effect for the view button */
+.view-btn:active {
+    transform: scale(0.95); /* Slight shrink on press */
+    background: linear-gradient(to right, #4a0c91, #174f9e); /* Darker gradient */
+}
+
+/* Optional fade-in animation for the view button */
+@keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.view-btn {
+    animation: buttonFadeIn 0.5s ease forwards;
+}
+
+.invoice-wrapper
+{
+    width: 70%;
+    background-color: white;
+    min-height: 70vh;
+    margin: auto;
+    padding: 20px;
+}
+
+.invoice-header
+{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+    align-items: center;
+}
+.company-logo
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px;
+}
+.cName
+{
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.customer-detail h1
+{
+    color: rgb(38, 25, 186);
+    margin-bottom: 10px;
+
+}
+
+
+.Product-table
+{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+th
+{
+    background-color: royalblue;
+    color: white;
+
+}
+
+th,td
+{
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
+
+tfoot
+{
+    background-color: royalblue;
+    color: white;
+}
+/* General Button Styling */
+.print-btn {
+    /* margin-top: 10px; */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 8%;
+    height: 3vh;
+    /* display: inline-block; */
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: bold;
+    /* text-align: end; */
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff; /* Classic blue */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+/* Hover and Active Effects */
+.print-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.print-btn:active {
+    background-color: #004085; /* Even darker when pressed */
+}
+
+/* Focus Style */
+.print-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus ring for accessibility */
+}
+
+/* Disabled State */
+.print-btn:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    padding-right: 20px; /* Optional padding */
+}
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation for the whole container */
+  }
+  
+  .settings-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 0.7s ease-out; /* Slide-in animation */
+  }
+  
+  .upload-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click animations */
+    animation: bounceIn 0.6s ease-out; /* Classic bounce-in animation */
+  }
+  
+  .upload-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+  }
+  
+  .upload-button:active {
+    transform: scale(0.98); /* Slight shrink effect on click */
+  }
+  
+  .error-msg, .success-msg {
+    margin-top: 15px;
+    font-size: 14px;
+    animation: fadeInUp 0.8s ease-out; /* Error or success message fades in and moves up */
+  }
+  
+  .error-msg {
+    color: red;
+  }
+  
+  .success-msg {
+    color: green;
+  }
+  
+  .profile-picture {
+    margin-top: 20px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    width: 100px;
+    height: 100px;
+    animation: zoomIn 0.8s ease-out; /* Profile picture zooms in smoothly */
+  }
+  
+  /* Keyframes for animations */
+  
+  /* Fade-in effect for container */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Slide-in effect for title */
+  @keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  /* Bounce-in effect for button */
+  @keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  
+  /* Fade-in and move-up effect for messages */
+  @keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Zoom-in effect for profile picture */
+  @keyframes zoomIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  
+  
+  
+  
+  
+
+
+
+

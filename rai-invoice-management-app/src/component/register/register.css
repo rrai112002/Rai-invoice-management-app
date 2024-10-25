@@ -77,4 +77,24 @@
     margin-left: 5px;
 
   }
+
+  .logo-preview {
+    width: 15%;
+    height: 15%;
+    animation: pulse 2s infinite ease-in-out;
+    border-radius: 40%;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1); /* Scales the logo to 110% */
+    }
+    100% {
+      transform: scale(1); /* Returns to original size */
+  }
+} 
+  
   

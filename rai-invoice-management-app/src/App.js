@@ -10,6 +10,7 @@ import Home from './component/dashboard/Home';
 import Invoices from './component/dashboard/Invoices';
 import Setting from './component/dashboard/Setting';
 import Newinvoice from './component/dashboard/Newinvoices';
+import Invoicedetail from './component/dashboard/Invoicedetail';
 
 
 
@@ -28,7 +29,9 @@ function App() {
       {path:'home', Component : Home},
       {path:'invoice', Component : Invoices},
       {path:'newinvoice', Component : Newinvoice},
-      {path:'setting', Component : Setting}
+      {path:'setting', Component : Setting},
+      {path:'invoice-detail', Component : Invoicedetail}
+
 
     ]}
 

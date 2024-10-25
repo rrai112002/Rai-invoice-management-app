@@ -250,7 +250,7 @@ function Register() {
     confirmPassword: '',
   });
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [message, setMessage] = useState('');
   const [file, setFile] = useState(null);
@@ -273,13 +273,13 @@ function Register() {
     setFile(selectedFile);
 
     // Show a preview of the selected image
-    // if (selectedFile) {
-    //   const reader = new FileReader();
-    //   reader.onloadend = () => {
-    //     setLogoPreview(reader.result);
-    //   };
-    //   reader.readAsDataURL(selectedFile);
-    // }
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLogoPreview(reader.result);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -341,6 +341,7 @@ function Register() {
           console.log('Profile updated successfully!');
 
           await setDoc(doc(db, 'users', newUser.user.uid), {
+            uid:newUser.user.uid,
             displayName: username,
             photoURL: downloadedUrl,
             email: email,
@@ -350,9 +351,16 @@ function Register() {
 
           localStorage.setItem('cName', newUser.user.displayName);
           localStorage.setItem('photoURL', newUser.user.photoURL);
-          navigate('/dashboard');
+          localStorage.setItem('email', newUser.user.email);
+          localStorage.setItem('uid', newUser.user.uid);
+
+        //   localStorage.setItem('date', date);
+
+          // navigate('/dashboard');
         }
       );
+      setMessage('Account create successfully');
+
     } catch (error) {
       console.error('Registration error:', error);
       setMessage('Failed to create account');
@@ -419,7 +427,7 @@ function Register() {
 
         <p className="Login-account">
           <Link to="/login" className="Login-link">
-            Login with account
+            Login with your account
           </Link>
         </p>
       </div>
