@@ -6,7 +6,7 @@ import { db } from "../../firebase";
 
 const Home = () => {
     const [total, setTotal] = useState(0)
-    const [totalinvoice, setTotalInvoice] = useState(4345)
+    const [totalinvoice, setTotalInvoice] = useState(0)
     const [totalmonthcollection, setTotalMonthCollection] = useState(0)
     const [invoices, setInvoices] = useState([])
 
@@ -16,19 +16,20 @@ const Home = () => {
 
     },[])
 
-    const getData = async () => {
-        const q = query(collection(db, "invoices"),where('uid', "==", localStorage.getItem('uid')))
-        const querySnapshot = await getDocs(q);
+    async function getData() {
+            const q = query(collection(db, "invoices"), where('uid', "==", localStorage.getItem('uid')));
+            const querySnapshot = await getDocs(q);
 
-        const data = querySnapshot.docs.map(doc => ({
-            id:doc.id,
-            ...doc.data()
-        }))
-        setInvoices(data)
-        // console.log('home', data)
-        getAlldataTotal(data)
-        getMonthsTotal(data)
-    }
+            const data = querySnapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setInvoices(data);
+            // console.log('home', data)
+            getAlldataTotal(data);
+            getMonthsTotal(data);
+            monthWiseCollection(data);
+        }
     const getAlldataTotal =(invoiceList)=>{
         var t = 0;
         invoiceList.forEach(data=>{
@@ -46,17 +47,63 @@ const Home = () => {
                 mt += data.total
             }
         })
-        setTotalMonthCollection(mt)
+        setTotalMonthCollection(mt);
+        // setTotalInvoice(data.length);
+
+    }
+
+    const monthWiseCollection = (data)=> {
+        const chartData = {
+            "Jan": 0,
+            "Feb": 0,
+            "Mar": 0,
+            "Apr": 0,
+            "May": 0,
+            "Jun": 0,
+            "Jul": 0,
+            "Aug": 0,
+            "Sep": 0,
+            "Oct": 0,
+            "Nov": 0,
+            "Dec": 0
+        };
+
+        data.forEach(d=>{
+            if(new Date(d.date.seconds * 1000).getFullYear() === new Date().getFullYear())
+            {
+                console.log('data', d)
+                console.log(new Date(d.date.seconds * 1000).toLocaleDateString('default', { month:'long'}));
+                chartData[new Date(d.date.seconds * 1000).toLocaleDateString('default', { month:'long'})] += d.total
+
+            }
+        })
+        console.log(chartData)
+
     }
     const createChart = () =>{
         const ctx = document.getElementById('myChart');
+        const chartData = {
+            "Jan": 0,
+            "Feb": 0,
+            "Mar": 0,
+            "Apr": 0,
+            "May": 0,
+            "Jun": 0,
+            "Jul": 0,
+            "Aug": 0,
+            "Sep": 0,
+            "Oct": 0,
+            "Nov": 0,
+            "Dec": 0
+        }
+        console.log(Object.keys(chartData))
         new Chart(ctx, {
             type: 'bar',
             data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'June'],
               datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Month wise Collection',
+                data: Object.values(chartData),
                 borderWidth: 1
               }]
             },
