@@ -58,6 +58,12 @@ const navigate = useNavigate()
                 
             ))          
            }
+           {
+            invoices.length < 1 && <div className="no-invoice-wrapper">
+                <p>You have no invoice till now</p>
+                <button onClick={()=>{navigate('/dashboard/newinvoice')}}>Create new Invoice</button>
+                </div>
+           }
         </div>
 
 
