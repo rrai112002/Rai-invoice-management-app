@@ -290,7 +290,7 @@ const Home = () => {
             <div className="home-first-row">
                 <div className="home-box box-1">
                     <h1 className="box-header">Rs {total}</h1>
-                    <p className="box-title">Overall</p>
+                    <p className="box-title">OverAll</p>
                 </div>
                 <div className="home-box box-2">
                     <h1 className="box-header">Rs {totalInvoice}</h1>
@@ -309,17 +309,28 @@ const Home = () => {
                     <h1>Recent Invoice list</h1>
                     {/* Sample data; replace with actual data rendering */}
                     <div>
-                        <p>customer Name</p>
-                        <p>25/10/2024</p>
+                        {/* <p style={{color : "blueviolet"}} >customer Name</p> */}
+                        <p style={{color:"blueviolet"}} className="invoice-list-home-second-row">Customer Name</p>
+                        <p style={{color:"blueviolet"}} className="invoice-list-home-second-row" >Date</p>
+                        <p style={{color:"blueviolet"}} className="invoice-list-home-second-row" >Total</p>
                     </div>
-                    <div>
-                        <p>customer Name</p>
-                        <p>25/10/2024</p>
-                    </div>
-                    <div>
-                        <p>customer Name</p>
-                        <p>25/10/2024</p>
-                    </div>
+                    {
+                         invoices.slice(0,6).map(data=>(
+                            <div>
+                                <p>{data.to}</p>
+                                <p>{new Date(data.date.seconds * 1000).toLocaleDateString()}</p>
+                                <p>{data.total}</p>
+
+                            </div>
+
+
+                         ))
+
+                    }
+                   
+
+                    
+                   
                 </div>
             </div>
         </div>

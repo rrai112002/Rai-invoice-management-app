@@ -77,6 +77,8 @@
 {
     font-size: px;
     color: rgb(82, 80, 80);
+    animation: fadeIn 0.5s forwards;
+
 }
 
 .first-row
@@ -84,6 +86,8 @@
     display: flex;
     gap: 10px;
     margin-top: 10px;
+    animation: fadeIn 0.5s forwards;
+
   
 
 }
@@ -107,6 +111,8 @@
     width: 20%;
     margin-top: 10px;
     cursor: pointer;
+    animation: fadeIn 0.5s forwards;
+
 
 }
 
@@ -195,7 +201,14 @@
     color: #333;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+
 }
+.box:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
 
 /* Text container inside the box */
 .box .text-content {
@@ -699,17 +712,38 @@ body {
 .box-1
 {
     background: linear-gradient(to right, #163676, rgb(186, 169, 215));
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+    /* border-radius: 8px; */
+    /* padding: 20px; */
+    /* color: white; */
 
 }
+.box-1:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
 .box-3
 {
     background: linear-gradient(to right, #0a1429, rgb(166, 166, 219));
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 
+
+}
+.box-3:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
 }
 .box-2
 {
     background: linear-gradient(to right, #60127c, rgb(182, 105, 176));
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 
+
+}
+.box-2:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
 }
 
 .home-second-row
@@ -718,6 +752,7 @@ body {
     margin-top: 20px;
     /* flex-direction: row; */
     justify-content: space-between;
+    
 }
 .chart-box
 {
@@ -726,8 +761,14 @@ body {
     /* background-color: rgb(124, 38, 38); */
     background-color: white;
     animation: fadeInList 0.5s ease-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 
 
+
+}
+.chart-box:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
 }
 .recent-invoice-list
 {
@@ -736,7 +777,14 @@ body {
     background-color: white;
     border-radius: 10px;
     animation: fadeInList 0.5s ease-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+
 }
+.recent-invoice-list:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
 .recent-invoice-list h1
 {
     font-size: 18px;
@@ -781,6 +829,21 @@ body {
 {
     color: yellow;
 }
+
+.invoice-list-home-second-row {
+    color: blueviolet;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 0;
+    padding: 6px 10px;
+    background-color: #f0f0ff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 
   
