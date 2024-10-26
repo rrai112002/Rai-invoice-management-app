@@ -31,51 +31,55 @@
 
 // export default Setting
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
-import { storage, auth } from '../../firebase';  // Import storage and auth from your Firebase config
+import { storage, auth, db } from '../../firebase';  // Import storage and auth from your Firebase config
+import { doc, updateDoc } from 'firebase/firestore';
 
 const Setting = () => {
+  const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const fileInputRef = useRef(null);  // Reference to the hidden file input element
+  const [displayName, setDisplayName] = useState(localStorage.getItem('cName') || '');
 
-  // Handle profile picture update when file is selected
-  const handleProfilePictureUpload = (file) => {
-    if (!file) {
-      setError('Please select a file to upload.');
-      return;
-    }
+  // Handle file change when clicking the "Update Profile Picture" button
+  const handleProfilePictureUpload = () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
 
+    input.onchange = (event) => {
+      const selectedFile = event.target.files[0];
+      if (selectedFile) {
+        setFile(selectedFile);
+        uploadProfilePicture(selectedFile);
+      }
+    };
+
+    input.click();
+  };
+
+  const uploadProfilePicture = (file) => {
     setLoading(true);
     setError('');
     setSuccess('');
 
-    // Create a storage reference for the file
     const storageRef = ref(storage, `profilePictures/${auth.currentUser.uid}/${file.name}`);
-
-    // Upload the file to Firebase Storage
+    
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on('state_changed',
-      (snapshot) => {
-        // Progress monitoring if you want (optional)
-      },
+      (snapshot) => {},
       (error) => {
         setError('Error uploading file: ' + error.message);
         setLoading(false);
       },
       () => {
-        // Get the download URL of the uploaded file
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          // Update user's profile with the new photo URL
-          updateProfile(auth.currentUser, {
-            photoURL: downloadURL
-          }).then(() => {
-            // Successfully updated profile picture
-            localStorage.setItem('photoURL', downloadURL); // Update in local storage
+          updateProfile(auth.currentUser, { photoURL: downloadURL }).then(() => {
+            localStorage.setItem('photoURL', downloadURL); // Update in localStorage
             setSuccess('Profile picture updated successfully!');
             setLoading(false);
           }).catch((error) => {
@@ -87,47 +91,81 @@ const Setting = () => {
     );
   };
 
-  // Handle button click to trigger file input
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();  // Trigger the hidden file input click
-    }
+  // Handle name change input
+  const handleNameChange = (e) => {
+    setDisplayName(e.target.value);
   };
 
-  // Handle file selection
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    if (selectedFile) {
-      handleProfilePictureUpload(selectedFile);
+  // Update the display name in Firebase and local storage
+  const handleNameUpdate = () => {
+    if (!displayName) {
+      setError('Display name cannot be empty.');
+      return;
     }
+
+    setLoading(true);
+    setError('');
+    setSuccess('');
+
+    updateProfile(auth.currentUser, { displayName: displayName })
+      .then(() => {
+        localStorage.setItem('cName', displayName); // Update in local storage
+        updateDoc(doc(db, "users", localStorage.getItem('uid')),{
+            displayName : displayName
+        })
+        setSuccess('Display name updated successfully!');
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError('Error updating name: ' + error.message);
+        setLoading(false);
+      });
   };
 
   return (
     <div className="settings-container">
-      <h2 className="settings-title">Update Profile Picture</h2>
-      
-      {/* Hidden file input */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        style={{ display: 'none' }}
-        accept="image/*"
+      <h2 className="settings-title">Update Profile</h2>
+      <img
+        className="profile-picture"
+        src={localStorage.getItem('photoURL')}
+        alt="Profile"
+        style={{ width: '100px', height: '100px' }}
       />
-      
-      {/* Button to trigger file input */}
-      <button className="upload-button" onClick={handleButtonClick} disabled={loading}>
-        {loading ? 'Uploading...' : 'Update Profile Picture'}
-      </button>
-      
+
+      {/* Update Profile Picture Section */}
+      <div className="profile-picture-section">
+        <button className="upload-button" onClick={handleProfilePictureUpload} disabled={loading}>
+          {loading ? 'Uploading...' : 'Update Profile Picture'}
+        </button>
+      </div>
+
+      {/* Display Profile Picture */}
+     
+
+      {/* Update Name Section */}
+      <div className="name-update-section">
+        <input
+          className="name-input"
+          type="text"
+          value={displayName}
+          onChange={handleNameChange}
+          placeholder="Enter new display name"
+        />
+        <button className="name-update-button" onClick={handleNameUpdate} disabled={loading}>
+          {'Update Display Name'}
+        </button>
+      </div>
+
       {error && <p className="error-msg">{error}</p>}
       {success && <p className="success-msg">{success}</p>}
-      
-      {/* Optionally display the current profile picture */}
-      <img className="profile-picture" src={localStorage.getItem('photoURL')} alt="Profile" style={{ width: '100px', height: '100px' }} />
     </div>
   );
 };
 
-export default Setting
+export default Setting;
+
+
+
+
+
 

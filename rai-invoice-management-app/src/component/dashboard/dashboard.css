@@ -517,101 +517,276 @@ tfoot
     justify-content: flex-end; /* Aligns the button to the right */
     padding-right: 20px; /* Optional padding */
 }
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Set a default font */
+}
+
+/* Colorful Background */
 .settings-container {
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff6b6b, #f7d94e, #6bf1c4); /* Colorful gradient background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+    animation: slideIn 0.6s ease-out; /* Slide-in animation */
+}
+
+/* Title Style */
+.settings-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInTitle 0.8s ease-in; /* Title fade-in animation */
+}
+
+/* Input and Button Styles */
+.name-update-section, .profile-picture-section {
+    margin-bottom: 10px;
+    display: flex;                  /* Use flexbox for layout */
+    flex-direction: column;        /* Stack items vertically */
+    align-items: center;           /* Center items horizontally */
+}
+
+.name-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for border color and box-shadow */
+}
+
+.name-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Highlight effect on focus */
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-update-button, .upload-button {
+    margin: 10px auto;            /* Center the button */
+    padding: 10px 20px;           /* Add padding for better clickability */
+    border: none;                  /* Remove default border */
+    border-radius: 5px;           /* Add rounded corners */
+    background-color: #007bff;    /* Blue background color */
+    color: white;                  /* White text color */
+    cursor: pointer;               /* Change cursor to pointer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scaling */
+}
+
+.upload-button:hover, .name-update-button:hover {
+    background-color: #0056b3;     /* Darker blue on hover */
+    transform: scale(1.05);        /* Slightly enlarge button on hover */
+}
+
+/* Loading Styles */
+.upload-button.loading, .name-update-button.loading {
+    background-color: #6c757d; /* Grey color when loading */
+    cursor: not-allowed;       /* Change cursor to not-allowed */
+}
+
+/* Loading Spinner Animation */
+.upload-button.loading:before, .name-update-button.loading:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: white; /* White top border for spinner */
+    animation: spin 0.8s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+/* Message Styles */
+.error-msg {
+    color: red;
+    text-align: center;
+    animation: fadeInMessage 0.5s ease-in; /* Fade-in animation for error messages */
+}
+
+.success-msg {
+    color: green;
+    text-align: center;
+    animation: fadeInMessage 0.5s ease-in; /* Fade-in animation for success messages */
+}
+
+/* Profile Picture Styles */
+.profile-picture-section {
+    display: flex;                  /* Use flexbox for centering */
+    flex-direction: column;        /* Stack items vertically */
+    align-items: center;           /* Center items horizontally */
+    margin: 20px 0;
+    /* border-bottom: #0056b3;               */
+}
+
+.profile-picture {
+    display: block;               /* Block display for centering */
+    margin: 10px auto;           /* Centering */
+    border-radius: 50%;           /* Circular shape */
+    width: 80px;                  /* Smaller profile picture */
+    height: 80px;                 /* Smaller profile picture */
+    animation: fadeInPicture 0.8s ease-in-out; /* Animation for fading in */
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.3); /* Border shadow */
+    
+}
+
+/* Keyframe Animations */
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInMessage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInPicture {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.home-first-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: fadeInList 0.5s ease-in;
+
+}
+
+.home-box
+{
+    /* background-color: red; */
+
+    width: 32%;
+    height: 27vh;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    animation: fadeIn 1s ease-in-out; /* Fade-in animation for the whole container */
-  }
-  
-  .settings-title {
-    font-size: 18px;
-    margin-bottom: 20px;
-    animation: slideInFromLeft 0.7s ease-out; /* Slide-in animation */
-  }
-  
-  .upload-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click animations */
-    animation: bounceIn 0.6s ease-out; /* Classic bounce-in animation */
-  }
-  
-  .upload-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Slight scaling effect on hover */
-  }
-  
-  .upload-button:active {
-    transform: scale(0.98); /* Slight shrink effect on click */
-  }
-  
-  .error-msg, .success-msg {
-    margin-top: 15px;
-    font-size: 14px;
-    animation: fadeInUp 0.8s ease-out; /* Error or success message fades in and moves up */
-  }
-  
-  .error-msg {
-    color: red;
-  }
-  
-  .success-msg {
-    color: green;
-  }
-  
-  .profile-picture {
+    gap: 10px;
+    animation: fadeInList 0.5s ease-in;
+
+
+}
+
+.box-1
+{
+    background: linear-gradient(to right, #163676, rgb(186, 169, 215));
+
+}
+.box-3
+{
+    background: linear-gradient(to right, #0a1429, rgb(166, 166, 219));
+
+}
+.box-2
+{
+    background: linear-gradient(to right, #60127c, rgb(182, 105, 176));
+
+}
+
+.home-second-row
+{
+    display: flex;
     margin-top: 20px;
-    border-radius: 50%;
-    border: 2px solid #007bff;
-    width: 100px;
-    height: 100px;
-    animation: zoomIn 0.8s ease-out; /* Profile picture zooms in smoothly */
-  }
+    /* flex-direction: row; */
+    justify-content: space-between;
+}
+.chart-box
+{
+    width: 60%;
+    height: 50vh;
+    /* background-color: rgb(124, 38, 38); */
+    background-color: white;
+    animation: fadeInList 0.5s ease-in;
+
+
+}
+.recent-invoice-list
+{
+    width: 35%;
+    min-height: 55vh;
+    background-color: white;
+    border-radius: 10px;
+    animation: fadeInList 0.5s ease-in;
+}
+.recent-invoice-list h1
+{
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(65, 50, 226);
+}
+.recent-invoice-list div
+{
+    /* height: 10%; */
+    display: flex;                   /* Flex layout for p tags */
+    justify-content: space-between;  /* Space out the p tags */
+    align-items: center;             /* Center items vertically */
+    background-color: #e6f7ff;       /* Slightly darker background */
+    padding: 5px;                   /*Padding inside the div*/
+    border-radius: 4px;              /* Rounded corners */
+    margin-bottom: 10px;
+}
+.recent-invoice-list div:hover
+{
+    background-color: #eee;
+    cursor: pointer;
+}
+.recent-invoice-list p {
+    font-size: 1rem;                 /* Font size for <p> text */
+    color: #555;                     /* Slightly gray color */
+    margin: 10px;  
+    margin-left: 5px;                     /* Remove default margin */
+    font-weight: 500;                /* Medium font weight */
+}
+@keyframes fadeInList {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.box-header
+{
+    color: white;
+}
+.box-title
+{
+    color: yellow;
+}
+
+
   
-  /* Keyframes for animations */
   
-  /* Fade-in effect for container */
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
   
-  /* Slide-in effect for title */
-  @keyframes slideInFromLeft {
-    0% { transform: translateX(-100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-  }
   
-  /* Bounce-in effect for button */
-  @keyframes bounceIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    60% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); }
-  }
-  
-  /* Fade-in and move-up effect for messages */
-  @keyframes fadeInUp {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-  
-  /* Zoom-in effect for profile picture */
-  @keyframes zoomIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-  }
   
   
   
