@@ -72,3 +72,4 @@ const navigate = useNavigate()
 }
 
 export default Invoices
+
