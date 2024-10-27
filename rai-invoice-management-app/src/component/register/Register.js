@@ -375,7 +375,7 @@ function Register() {
         {logoPreview && <img src={logoPreview} alt="Logo Preview" className="logo-preview" />}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Username:</label>
+            <label>Company Name:</label>
             <input
               type="text"
               name="username"
