@@ -28,7 +28,7 @@ Check out the live demo: [Invoice Management Dashboard Demo](https://your-demo-l
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React, HTML5, CSS3
+- **Frontend**: React.js , HTML5, CSS3
 - **Backend**: Firebase Authentication, Firestore, Firebase Storage
 - **Libraries**: Chart.js, js.PDF, FontAwesome
 
