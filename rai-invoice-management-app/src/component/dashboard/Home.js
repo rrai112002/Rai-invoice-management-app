@@ -331,10 +331,21 @@ const Home = () => {
                 layout: {
                     padding: 10
                 },
-                responsive: true
+                responsive: true,
+                animation: {
+                    duration: 1500, // Animation duration in milliseconds
+                    easing: 'easeOutBounce', // 'easeOutBounce' for a bounce effect
+                    animateScale: true,
+                    animateRotate: true
+                },
+                hover: {
+                    animationDuration: 800 // Animation duration when hovering
+                },
+                responsiveAnimationDuration: 1000 // Animation duration on resize
             }
         });
     };
+    
     
 
     return (

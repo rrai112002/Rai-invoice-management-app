@@ -82,6 +82,8 @@ const Setting = () => {
             localStorage.setItem('photoURL', downloadURL); // Update in localStorage
             setSuccess('Profile picture updated successfully!');
             setLoading(false);
+            window.location.reload();
+
           }).catch((error) => {
             setError('Error updating profile: ' + error.message);
             setLoading(false);
@@ -115,6 +117,7 @@ const Setting = () => {
         })
         setSuccess('Display name updated successfully!');
         setLoading(false);
+        window.location.reload();
       })
       .catch((error) => {
         setError('Error updating name: ' + error.message);
@@ -152,7 +155,7 @@ const Setting = () => {
           placeholder="Enter new display name"
         />
         <button className="name-update-button" onClick={handleNameUpdate} disabled={loading}>
-          {'Update Display Name'}
+          {loading ? 'Uploading...' :'Update Display Name'}
         </button>
       </div>
 
