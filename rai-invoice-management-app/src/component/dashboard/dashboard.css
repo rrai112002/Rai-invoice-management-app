@@ -174,9 +174,10 @@ hr {
     border-bottom: #282c34;
     background-color: rgb(45, 45, 207);
 
-    width: 17%;
-    margin-top: 10px;
+    width: 15%;
+    margin-top: 18px;
     cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     animation: fadeIn 0.5s forwards;
 
 
@@ -232,8 +233,17 @@ hr {
 .header-row button
 {
     background-color: #151413;
-    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 
+    /* border-radius: 50%; */
+    /* height: 7vh;
+    width: 10.5vh; */
+
+}
+.header-row button:hover
+{
+        transform: scale(1.05); /* Slightly scale up */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
 }
 
 /* .box
@@ -858,7 +868,8 @@ body {
     width: 60%;
     height: 50vh;
     /* background-color: rgb(124, 38, 38); */
-    background-color: white;
+    background-color: rgb(15, 16, 16);
+    border-radius: 10px;
     animation: fadeInList 0.5s ease-in;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 
