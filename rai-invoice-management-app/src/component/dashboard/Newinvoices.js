@@ -9,7 +9,7 @@ const Newinvoice = () => {
     const [address, setAddress] = useState('')
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState('')
     const [product, setProduct] = useState([])
     const [total, setTotal] = useState(0)
 
@@ -67,8 +67,8 @@ const Newinvoice = () => {
                 </div>
                 <div className="first-row">
                 <input onChange={e=>{setName(e.target.value)}} placeholder='Product Name' value={name}/>
-                <input onChange={e=>{setPrice(e.target.value)}} placeholder='price' value={price}/>
-                <input type="number" onChange={e=>{setQuantity(e.target.value)}} placeholder='quantity' value={quantity}/>
+                <input onChange={e=>{setPrice(e.target.value)}} placeholder='Price' value={price}/>
+                <input type="number" onChange={e=>{setQuantity(e.target.value)}} placeholder='Quantity' value={quantity}/>
 
                 </div>
                 <button onClick={addProduct} className='add-btn' type='button'>Add Product</button>
