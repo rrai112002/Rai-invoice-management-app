@@ -31,7 +31,26 @@
     border-radius: 50%;
     margin-bottom: 10px;
     border: 4px solid #ecf0f1;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.profile-info img:hover
+{
+        transform: scale(1.05); /* Slightly scale up */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
 
 .profile-info p {
     font-size: 1.2em;
@@ -52,7 +71,9 @@
 
 .profile-info button:hover {
     background-color: #bdc3c7;
+
 }
+
 
 hr {
     width: 80%;
@@ -88,8 +109,9 @@ hr {
     flex: 1;
     padding: 30px;
     overflow-y: auto;
-    background: linear-gradient(135deg, #2c2f33, #40444b);
-    color: #dcdcdc;
+    /* background: linear-gradient(135deg, #2c2f33, #40444b); */
+    background: linear-gradient(135deg, #3b4a52, #5a6a73);
+    /* color: #dcdcdc; */
     font-family: 'Lora', serif;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
     animation: fadeIn 1s ease-in-out;
@@ -112,7 +134,7 @@ hr {
 /* Subtle Hover Effect */
 .main-container:hover {
     background: linear-gradient(135deg, #343a40, #484e54);
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
 
@@ -516,6 +538,10 @@ hr {
     color: rgb(38, 25, 186);
     margin-bottom: 10px;
 
+}
+.customer-detail p
+{
+    font-weight: 600;
 }
 
 
