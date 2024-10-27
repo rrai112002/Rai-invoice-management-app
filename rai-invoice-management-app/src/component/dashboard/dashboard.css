@@ -909,7 +909,7 @@ body {
     justify-content: space-between;  /* Space out the p tags */
     align-items: center;             /* Center items vertically */
     background-color: #e6f7ff;       /* Slightly darker background */
-    padding: 5px;                   /*Padding inside the div*/
+    padding: 5px;                  /*  Padding inside the div */
     border-radius: 4px;              /* Rounded corners */
     margin-bottom: 10px;
 }
