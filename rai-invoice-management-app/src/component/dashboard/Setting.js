@@ -155,7 +155,7 @@ const Setting = () => {
           placeholder="Enter new display name"
         />
         <button className="name-update-button" onClick={handleNameUpdate} disabled={loading}>
-          {loading ? 'Uploading...' :'Update Display Name'}
+          {loading ? 'Uploading...' :'Update Company Name'}
         </button>
       </div>
 
