@@ -30,15 +30,9 @@ Check out the live demo: [Invoice Management Dashboard Demo](https://your-demo-l
 
 - **Frontend**: React, HTML5, CSS3
 - **Backend**: Firebase Authentication, Firestore, Firebase Storage
-- **Libraries**: Chart.js, FontAwesome
+- **Libraries**: Chart.js, js.PDF, FontAwesome
 
 ---
 
-## 📥 Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/your-username/invoice-management-dashboard.git
-   cd invoice-management-dashboard
+<h3>_Thank You_</h3>
 
