@@ -702,7 +702,8 @@ body {
     border-radius: 5px;           /* Add rounded corners */
     background-color: #007bff;    /* Blue background color */
     color: white;                  /* White text color */
-    cursor: pointer;               /* Change cursor to pointer */
+    cursor: pointer;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;              /* Change cursor to pointer*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scaling */
 }
