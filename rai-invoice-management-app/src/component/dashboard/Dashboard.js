@@ -29,9 +29,9 @@ const Dashboard = () => {
                 <hr/>
                 <div className='menu'>
                 <Link to="home" className='menu-link'><i className="fa-solid fa-house"></i> Home</Link>
-                <Link to="invoice" className='menu-link'><i className="fa-solid fa-file-invoice"></i> Invoice</Link> 
+                <Link to="invoice" className='menu-link'><i className="fa-solid fa-file-invoice"></i> Invoices</Link> 
                 <Link to="newinvoice" className='menu-link'><i className="fa-solid fa-file"></i> New Invoice</Link>
-                <Link to="setting" className='menu-link'><i className="fa-solid fa-gear"></i> Setting</Link>
+                <Link to="setting" className='menu-link'><i className="fa-solid fa-gear"></i> Settings</Link>
 
                 </div>
 
