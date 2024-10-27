@@ -41,7 +41,7 @@ const navigate = useNavigate()
     }
     return (
        
-        <div>
+        <div className="ab">
            {
             invoices.map(data=>(
                 <div className="box" key={data.id}>

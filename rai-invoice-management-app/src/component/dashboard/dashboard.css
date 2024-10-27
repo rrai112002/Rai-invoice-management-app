@@ -133,8 +133,8 @@ hr {
 
 /* Subtle Hover Effect */
 .main-container:hover {
-    background: linear-gradient(135deg, #343a40, #484e54);
-    /* color: #ffffff; */
+    background: linear-gradient(135deg, #333b42, #4c5960);
+    /* color: #e0e0e0; */
 }
 
 
@@ -294,8 +294,6 @@ hr {
     transform: scale(1.05); /* Slightly scale up */
     box-shadow: 0 8px 16px rgba(152, 62, 62, 0.2); /* Add shadow effect */
 }
-
-
 /* Text container inside the box */
 .box .text-content {
     display: flex;
@@ -629,12 +627,21 @@ body {
 /* Colorful Background */
 .settings-container {
     padding: 20px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #ff6b6b, #f7d94e, #6bf1c4); /* Colorful gradient background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2b3941, #6c8190,#b2bfcc); /* Colorful gradient background */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     width: 300px;
     margin: 20px auto;
+    font-family: 'Lora', serif;
+    
     animation: slideIn 0.6s ease-out; /* Slide-in animation */
+    transition: transform 0.4s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+
+}
+.settings-container:hover
+{
+        transform: scale(1.05); /* Slightly scale up */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
 }
 
 /* Title Style */
@@ -743,7 +750,7 @@ body {
     width: 80px;                  /* Smaller profile picture */
     height: 80px;                 /* Smaller profile picture */
     animation: fadeInPicture 0.8s ease-in-out; /* Animation for fading in */
-    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.3); /* Border shadow */
+    box-shadow: 12px 8px 12px rgba(0, 0, 0, 0.3); /* Border shadow */
     
 }
 
