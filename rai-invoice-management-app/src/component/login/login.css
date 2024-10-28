@@ -8,7 +8,7 @@
     background-color: black;
 } */
 .login-outbbox{
-    background-image: url('/Users/rohitrai/Desktop/Screenshot 2024-10-20 at 6.56.10 PM.png'); /* Replace with the actual path to your image */
+    background-image: url('../../../public/image_login.png'); /* Replace with the actual path to your image */
     background-size: cover;  /* Ensures the image covers the entire background */
     background-position: center;  /* Center the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
