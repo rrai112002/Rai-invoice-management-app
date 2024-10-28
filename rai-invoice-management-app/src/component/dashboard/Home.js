@@ -356,7 +356,7 @@ const Home = () => {
                     <p className="box-title">OverAll</p>
                 </div>
                 <div className="home-box box-2">
-                    <h1 className="box-header">Rs {totalInvoice}</h1>
+                    <h1 className="box-header">{totalInvoice}</h1>
                     <p className="box-title">Invoices</p>
                 </div>
                 <div className="home-box box-3">
