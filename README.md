@@ -22,7 +22,9 @@ A **classic-themed Invoice Management Dashboard** built with **React** and **Fir
 
 ## 🎬 Demo
 
-Check out the live demo: [Invoice Management Dashboard Demo](https://your-demo-link.com)
+Check out the live demo: [Click here](https://rai-invoice-management-app.vercel.app)
+
+
 
 ---
 
