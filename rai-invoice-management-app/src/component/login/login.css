@@ -149,9 +149,11 @@
     margin: 120px auto;
     border-radius: 12px;
     font-family: 'Georgia', serif;
-    background-color: #f0ebe3;
-    border: 1px solid #dcd7c9;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    /* background-color: #f0ebe3; */
+    background-color: #f3f0eb, 0.1; 
+
+    border: 2px solid #dcd7c9;
+    box-shadow: 20px 8px 15px rgba(0, 0, 0, 0.3);
     animation: fadeInScale 1s ease-in-out;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }

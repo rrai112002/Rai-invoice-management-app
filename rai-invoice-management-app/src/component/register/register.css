@@ -15,12 +15,15 @@
   .create-account-container {
     width: 350px;
     padding: 30px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    animation: fadeInScale 0.8s ease-in-out; /* Smooth fade-in animation */
-    transition: transform 0.3s ease-in-out; /* Transition for scaling on hover */
-  }
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(81, 146, 155, 0.9), rgba(255, 255, 255, 0.95)); /* Soft gradient */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+    animation: fadeInScale 0.8s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    font-family: 'Georgia', serif;
+    border: 1px solid #d4d4d4;
+}
+
   .create-account-container:hover
   {
     transform: scale(1.05); /* Slightly scale up the box when hovered */
@@ -92,6 +95,7 @@
     cursor: pointer;
     transition: color 0.3s ease;
     margin-left: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
   }
 

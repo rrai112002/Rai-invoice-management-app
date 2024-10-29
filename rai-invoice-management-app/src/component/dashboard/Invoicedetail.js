@@ -45,7 +45,7 @@ const Invoicedetail = () => {
                     <div className="company-detail">
                     <img className="company-logo" alt="logo" src={localStorage.getItem('photoURL')} />
                     <p className="cName">{localStorage.getItem('cName')}</p>
-                    <p>{localStorage.getItem('email')}</p>
+                    <p className="email">{localStorage.getItem('email')}</p>
 
                     </div>
 
