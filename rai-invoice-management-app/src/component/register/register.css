@@ -1,6 +1,9 @@
 .out-layer{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(116, 178, 185, 0.9), rgba(255, 255, 255, 0.95)); /* Soft gradient */
+
     background-image: url('../../../public/image_login.png');
     /* ; Replace with your background image */
+
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -16,7 +19,7 @@
     width: 350px;
     padding: 30px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(81, 146, 155, 0.9), rgba(255, 255, 255, 0.95)); /* Soft gradient */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(116, 178, 185, 0.9), rgba(255, 255, 255, 0.95)); /* Soft gradient */
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
     animation: fadeInScale 0.8s ease-in-out;
     transition: transform 0.3s ease-in-out;

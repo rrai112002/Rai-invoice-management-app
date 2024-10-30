@@ -853,7 +853,7 @@ body {
 }
 .box-2
 {
-    background: linear-gradient(to right, #60127c, rgb(182, 105, 176));
+    background: linear-gradient(to right, #53096e, rgb(186, 137, 182));
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 
 
