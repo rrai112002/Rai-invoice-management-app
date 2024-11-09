@@ -115,6 +115,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
   }
   
   button:hover {
@@ -204,10 +205,11 @@
     font-family: 'Georgia', serif;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
 }
 
 .login-container button:hover {
-    background-color: #a48c7b;
+    background-color: #70625a;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
