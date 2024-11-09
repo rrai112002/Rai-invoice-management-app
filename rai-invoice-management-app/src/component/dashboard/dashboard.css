@@ -64,8 +64,11 @@
     background-color: #ecf0f1;
     border: none;
     border-radius: 5px;
+    box-shadow: #151413;
+    box-shadow: #53096e;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
+    font-weight: 600;
 
 }
 
