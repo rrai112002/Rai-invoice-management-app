@@ -6,7 +6,7 @@
 
 A **classic-themed Invoice Management Dashboard** built with **React** and **Firebase**, designed to streamline invoice creation, profile management, and data visualization. This app features a dark, timeless design to enhance usability and aesthetics.
 
-![Project Banner](https://via.placeholder.com/800x200) <!-- Replace with your own project banner -->
+ <!-- Replace with your own project banner -->
 
 ---
 
